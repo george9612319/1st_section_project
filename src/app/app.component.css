@@ -1,0 +1,9 @@
+.nav-link:hover {
+    color:rgb(255, 255, 255);
+    font-weight:bold;
+}
+
+.nav-link.selected {
+    color:rgb(255, 255, 255);
+    font-weight:bold;
+}

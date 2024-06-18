@@ -1,0 +1,30 @@
+<div class="container">
+    <h1>Meeeting Form</h1>
+    <form #meetingForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="topic" class="form-label">Meeting Topic</label>
+            <input type="text" class="form-control" id="topic"
+            [(ngModel)]="model.topic" name="topic" #topic="ngModel" required>
+                <div class="alert alert-danger" role="alert" [hidden]="topic.valid || topic.pristine">
+                    Topic is required
+                </div>
+        </div>
+        <div class="mb-3">
+            <label for="number" class="form-label">Number of People</label>
+            <input type="number" class="form-control" id="number" 
+            [(ngModel)]="model.numberOfpeople" name="numberOfpeople" #numberOfpeople="ngModel" required>
+                <div class="alert alert-danger" role="alert" [hidden]="numberOfpeople.valid || numberOfpeople.pristine">
+                    Number of People is required
+                </div>
+        </div>
+        <div class="mb-3">
+            <label for="datetime" class="form-label" >Start Time</label>
+            <input type="datetime-local" class="form-control" id="datetime"
+             [(ngModel)]="model.starttime" #datetime="ngModel" name="datetime" required="">
+                <div class="alert alert-danger" role="alert" [hidden]="datetime.valid || datetime.pristine">
+                    Start Time is required
+                </div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!meetingForm.form.valid">Submit</button>
+    </form>
+</div>
